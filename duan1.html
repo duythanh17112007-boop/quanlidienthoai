@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ - Cửa Hàng Điện Thoại</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="duan1.css">
+</head>
+<body>
+    <header>
+        <img src="./anh/anh1.gif" alt="Banner khuyến mãi">
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#" onclick="showPage('home')"><img style="width: 50px" src="./anh/logo.jpeg" alt="Logo"></a></li>
+
+                <li class="admin-hide"><a href="" id="adress-open">Khu vực <i class="fa-solid fa-square-caret-down"></i></a></li>
+
+                <li class="admin-hide">
+                    <div class="search-box">
+                        <input type="text" id="search-input" placeholder="Tìm kiếm...">
+                        <i class="fa-solid fa-magnifying-glass" id="search-btn" style="cursor: pointer;"></i>
+                    </div>
+                </li>
+
+                <li class="admin-hide"><button type="button" onclick="showPage('cart')"><i class="fa-solid fa-cart-shopping"></i> Giỏ hàng</button></li>
+
+                <li class="admin-hide"><a href="#" onclick="showPage('history')">Lịch sử mua hàng</a></li>
+                <li class="admin-hide"><a href="">Mua thẻ để nạp ngay! <span></span></a></li>
+                <li class="admin-hide"><a href="">24h công nghệ</a></li>
+                <li class="admin-hide"><a href="#" onclick="showPage('faq')">Hỏi đáp</a></li>
+                <li class="admin-hide"><a href="">APP</a></li>
+                <li class="admin-hide"><a href="#" onclick="showPage('login')" id="login-link"><i class="fa-regular fa-user"></i> Đăng nhập</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="page-home" class="spa-page">
+
+        <div class="adress-form" id="adress-popup">
+            <div class="adress-form-content">
+                <h2>Chọn địa chỉ nhận hàng <span id="adress-close">✕ Đóng</span></h2>
+                <form action="">
+                    <p>Chọn địa chỉ đầy đủ để biết chính xác thời gian giao hàng</p>
+                    <select id="province-select">
+                        <option value="">Chọn tỉnh/thành phố</option>
+                        <option>Hà Nội</option>
+                        <option>TP. Hồ Chí Minh</option>
+                        <option>Đà Nẵng</option>
+                        <option>Hải Phòng</option>
+                        <option>Cần Thơ</option>
+                        <option>An Giang</option>
+                        <option>Bà Rịa - Vũng Tàu</option>
+                        <option>Bắc Giang</option>
+                        <option>Bắc Kạn</option>
+                        <option>Bạc Liêu</option>
+                        <option>Bắc Ninh</option>
+                        <option>Bến Tre</option>
+                        <option>Bình Định</option>
+                        <option>Bình Dương</option>
+                        <option>Bình Phước</option>
+                        <option>Bình Thuận</option>
+                        <option>Cà Mau</option>
+                        <option>Cao Bằng</option>
+                        <option>Đắc Lắc</option>
+                        <option>Đắk Nông</option>
+                        <option>Điện Biên</option>
+                        <option>Đồng Nai</option>
+                        <option>Đồng Tháp</option>
+                        <option>Gia Lai</option>
+                        <option>Hà Giang</option>
+                        <option>Hà Nam</option>
+                        <option>Hà Tĩnh</option>
+                        <option>Hải Dương</option>
+                        <option>Hậu Giang</option>
+                        <option>Hòa Bình</option>
+                        <option>Hưng Yên</option>
+                        <option>Khánh Hòa</option>
+                        <option>Kiên Giang</option>
+                        <option>Kon Tum</option>
+                        <option>Lai Châu</option>
+                        <option>Lâm Đồng</option>
+                        <option>Lạng Sơn</option>
+                        <option>Lào Cai</option>
+                        <option>Long An</option>
+                        <option>Nam Định</option>
+                        <option>Nghệ An</option>
+                        <option>Ninh Bình</option>
+                        <option>Ninh Thuận</option>
+                        <option>Phú Thọ</option>
+                        <option>Phú Yên</option>
+                        <option>Quảng Bình</option>
+                        <option>Quảng Nam</option>
+                        <option>Quảng Ngãi</option>
+                        <option>Quảng Ninh</option>
+                        <option>Quảng Trị</option>
+                        <option>Sóc Trăng</option>
+                        <option>Sơn La</option>
+                        <option>Tây Ninh</option>
+                        <option>Thái Bình</option>
+                        <option>Thái Nguyên</option>
+                        <option>Thanh Hóa</option>
+                        <option>Thừa Thiên Huế</option>
+                        <option>Tiền Giang</option>
+                        <option>Trà Vinh</option>
+                        <option>Tuyên Quang</option>
+                        <option>Vĩnh Long</option>
+                        <option>Vĩnh Phúc</option>
+                        <option>Yên Bái</option>
+                    </select>
+                    <button type="button" id="confirm-address-btn">Xác nhận</button>
+                </form>
+            </div>
+        </div>
+
+        <section class="slider">
+            <div class="container slider-content">
+                <div class="slider-content-left">
+                    <div class="slider-content-left-container">
+                        <div class="slider-content-left-top">
+                            <a href=""><img src="./anh/anh1.png" alt="Banner 1"></a>
+                            <a href=""><img src="./anh/anh2.webp" alt="Banner 2"></a>
+                            <a href=""><img src="./anh/anh3.webp" alt="Banner 3"></a>
+                            <a href=""><img src="./anh/anh4.webp" alt="Banner 4"></a>
+                            <a href=""><img src="./anh/anh5.webp" alt="Banner 5"></a>
+                        </div>
+                        <div class="slider-content-left-btn">
+                            <i class="fa-solid fa-arrow-left" id="btn-left"></i>
+                            <i class="fa-solid fa-arrow-right" id="btn-right"></i>
+                        </div>
+                    </div>
+                    <ul class="slider-content-left-bottom">
+                        <li class="active">Iphone 18 Pro</li>
+                        <li>Nokia</li>
+                        <li>Samsung Galaxy Z Fold8 Ultra</li>
+                        <li>Samsung Galaxy S26 Series</li>
+                        <li>Iphone 17</li>
+                    </ul>
+                </div>
+                <ul class="slider-content-right">
+                    <li><a href=""><img src="./slide/ảnh/slide1.webp" alt="Ưu đãi 1"></a></li>
+                    <li><a href=""><img src="./slide/ảnh/slide3.webp" alt="Ưu đãi 2"></a></li>
+                    <li><a href=""><img src="./slide/ảnh/slide4.webp" alt="Ưu đãi 3"></a></li>
+                    <li><a href=""><img src="./slide/ảnh/slide5.webp" alt="Ưu đãi 4"></a></li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="container">
+            <a href="" class="promo-banner">
+                <img src="./anh/vien1.webp" alt="Khuyến mãi">
+            </a>
+        </div>
+
+        <div class="container filter-bar">
+            <button type="button" class="chip filter-btn"><i class="fa-solid fa-filter"></i> Lọc</button>
+            <a href="" class="chip brand" data-brand="all">Tất cả</a>
+            <a href="" class="chip brand" data-brand="iphone">iPhone</a>
+            <a href="" class="chip brand" data-brand="samsung">SAMSUNG</a>
+            <a href="" class="chip brand" data-brand="nokia">Nokia</a>
+            <a href="" class="chip brand" data-brand="realme">realme</a>
+            <a href="" class="chip brand" data-brand="vivo">vivo</a>
+        <a href="" class="chip brand" data-brand="Oppo">oppo</a>
+         <a href="" class="chip brand" data-brand="Xiaomi">xiaomi</a>
+            <a href="" class="chip trend"><i class="fa-solid fa-arrow-trend-up"></i> Điện thoại AI cao cấp</a>
+            <a href="" class="chip trend"><i class="fa-solid fa-arrow-trend-up"></i> Pin từ 7000mAh</a>
+        </div>
+
+        <section class="product-section container">
+            <h3 class="sec-title">Chọn tiêu chí</h3>
+            <div class="chips-row">
+                <button type="button" class="chip" id="btn-reset-filter"><i class="fa-solid fa-filter"></i> Tất cả bộ lọc</button>
+
+                <div class="filter-dropdown-wrapper">
+                    <button type="button" class="chip dropdown-toggle">Giá <i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="dropdown-menu">
+                        <button class="dropdown-item" onclick="setPriceFilter('all')">Tất cả mức giá</button>
+                        <button class="dropdown-item" onclick="setPriceFilter('under-5m')">Dưới 5 triệu</button>
+                        <button class="dropdown-item" onclick="setPriceFilter('5m-15m')">Từ 5 - 15 triệu</button>
+                        <button class="dropdown-item" onclick="setPriceFilter('15m-30m')">Từ 15 - 30 triệu</button>
+                        <button class="dropdown-item" onclick="setPriceFilter('above-30m')">Trên 30 triệu</button>
+                    </div>
+                </div>
+
+                <div class="filter-dropdown-wrapper">
+                    <button type="button" class="chip dropdown-toggle">Bộ nhớ trong <i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="dropdown-menu">
+                        <button class="dropdown-item" onclick="setStorageFilter('all')">Tất cả bộ nhớ</button>
+                        <button class="dropdown-item" onclick="setStorageFilter('64GB')">64GB</button>
+                        <button class="dropdown-item" onclick="setStorageFilter('128GB')">128GB</button>
+                        <button class="dropdown-item" onclick="setStorageFilter('256GB')">256GB</button>
+                        <button class="dropdown-item" onclick="setStorageFilter('512GB')">512GB</button>
+                        <button class="dropdown-item" onclick="setStorageFilter('1TB')">1TB</button>
+                    </div>
+                </div>
+
+                <div class="filter-dropdown-wrapper">
+                    <button type="button" class="chip dropdown-toggle">Dung lượng <i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="dropdown-menu">
+                        <button class="dropdown-item" onclick="setRamFilter('all')">Tất cả RAM</button>
+                        <button class="dropdown-item" onclick="setRamFilter('4GB')">4GB</button>
+                        <button class="dropdown-item" onclick="setRamFilter('6GB')">6GB</button>
+                        <button class="dropdown-item" onclick="setRamFilter('8GB')">8GB</button>
+                        <button class="dropdown-item" onclick="setRamFilter('12GB')">12GB</button>
+                        <button class="dropdown-item" onclick="setRamFilter('16GB')">16GB</button>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="sec-title">Sắp xếp theo</h3>
+            <div class="chips-row">
+                <button type="button" class="chip sort-btn active" data-sort="desc"><i class="fa-solid fa-arrow-down-wide-short"></i> Giá Cao - Thấp</button>
+                <button type="button" class="chip sort-btn" data-sort="asc"><i class="fa-solid fa-arrow-up-wide-short"></i> Giá Thấp - Cao</button>
+            </div>
+
+            <div class="product-grid"></div>
+
+            <div class="more-wrap">
+                <button type="button" id="more-btn" class="load-more">Xem thêm</button>
+                <button type="button" id="less-btn" class="load-more">Ẩn bớt</button>
+            </div>
+        </section>
+
+        <article class="article container">
+            <h1>Điện thoại di động - Trợ thủ không thể thiếu của mỗi người</h1>
+            <p>Trong cuộc sống hiện đại, điện thoại di động đã trở thành một phần không thể thiếu, đóng vai trò quan trọng như một trợ thủ đắc lực của mỗi người. Với khả năng kết nối, giải trí và làm việc, điện thoại di động không chỉ đơn thuần là một phương tiện liên lạc, mà còn là công cụ hỗ trợ quản lý công việc, lưu giữ kỷ niệm và tiếp cận thông tin một cách nhanh chóng. Dù ở bất kỳ độ tuổi hay ngành nghề nào, từ học sinh, sinh viên đến nhân viên văn phòng hay những người làm kinh doanh, điện thoại di động đều mang lại những tiện ích và lợi ích thiết thực, góp phần nâng cao chất lượng cuộc sống và hiệu quả công việc hàng ngày.</p>
+
+            <h2>Tìm hiểu về điện thoại di động</h2>
+            <h3>Các chức năng và ứng dụng của điện thoại di động</h3>
+            <p>Điện thoại di động ngày nay đã vượt xa khỏi vai trò ban đầu của nó là phương tiện liên lạc. Với sự phát triển không ngừng của công nghệ, các thiết bị này đã trở thành những chiếc máy tính mini với vô vàn chức năng và ứng dụng đa dạng. Từ việc duy trì liên lạc, giải trí, hỗ trợ công việc đến chăm sóc sức khỏe và học tập, điện thoại di động đã và đang đóng góp một phần quan trọng trong mọi khía cạnh của cuộc sống hiện đại. Hãy cùng khám phá các chức năng chính và những ứng dụng hữu ích mà điện thoại di động mang lại, giúp chúng ta hiểu rõ hơn về sự đa năng và tiện ích của thiết bị này.</p>
+
+            <h4>Chức năng của điện thoại di động</h4>
+            <ul>
+                <li>Chức năng liên lạc: cuộc gọi, tin nhắn, video call</li>
+                <li>Chức năng giải trí: xem phim, nghe nhạc, chơi game</li>
+                <li>Chức năng làm việc: email, quản lý công việc, văn phòng di động</li>
+                <li>Chức năng học tập: ứng dụng học tập, tra cứu thông tin</li>
+                <li>Chức năng sức khỏe: theo dõi sức khỏe, ứng dụng thể dục</li>
+            </ul>
+
+            <h3>Phân loại điện thoại di động thông minh theo mục đích sử dụng</h3>
+            <p>Trong thế giới điện thoại di động thông minh ngày nay, mỗi thiết bị không chỉ đơn thuần phục vụ mục đích liên lạc mà còn đáp ứng những nhu cầu đa dạng và cụ thể của người dùng. Từ những công cụ hỗ trợ công việc chuyên nghiệp, đến các thiết bị tối ưu cho giải trí hay sức khỏe, điện thoại di động thông minh đã phát triển để phù hợp với từng mục đích sử dụng khác nhau. Để lựa chọn một chiếc điện thoại phù hợp, việc phân loại dựa trên mục đích sử dụng là rất quan trọng. Dưới đây, chúng ta sẽ khám phá các phân loại điện thoại thông minh dựa trên mục đích sử dụng, giúp bạn tìm ra thiết bị lý tưởng nhất cho nhu cầu cá nhân của mình.</p>
+
+            <h4>Điện thoại di động thông minh dành cho người dùng phổ thông</h4>
+            <p><strong>Đặc điểm:</strong></p>
+            <ul>
+                <li>Thiết kế đơn giản, dễ sử dụng: Những điện thoại này thường có giao diện người dùng trực quan và dễ thao tác. Với thiết kế thân thiện, chúng phù hợp với người dùng không có yêu cầu cao về công nghệ và thích sự đơn giản trong việc sử dụng thiết bị.</li>
+                <li>Các tính năng cơ bản: Các thiết bị này cung cấp những chức năng cần thiết như gọi điện, nhắn tin, lướt web và sử dụng mạng xã hội, mà không có các tính năng nâng cao hoặc công nghệ tiên tiến. Chúng đáp ứng đủ nhu cầu hàng ngày mà không làm người dùng cảm thấy bị quá tải.</li>
+            </ul>
+            <p><strong>Nhu cầu:</strong></p>
+            <ul>
+                <li>Kết nối, giải trí nhẹ nhàng: Điện thoại thông minh dành cho người dùng phổ thông chủ yếu phục vụ việc kết nối với gia đình và bạn bè, cũng như giải trí nhẹ nhàng như xem video hoặc lướt mạng xã hội. Chúng cung cấp đủ khả năng để đáp ứng những nhu cầu giải trí cơ bản mà không yêu cầu hiệu suất quá cao.</li>
+                <li>Sử dụng hàng ngày: Những thiết bị này phù hợp cho việc sử dụng hàng ngày, giúp người dùng thực hiện các công việc cơ bản như kiểm tra email, gửi tin nhắn, và thực hiện các cuộc gọi mà không gặp phải vấn đề về hiệu suất.</li>
+            </ul>
+            <p><strong>Ví dụ:</strong> Các mẫu điện thoại có giá tầm trung như iPhone 11 Pro Max, Samsung Galaxy S21 Ultra…</p>
+
+            <h4>Điện thoại di động thông minh cho người dùng doanh nhân</h4>
+            <p><strong>Đặc điểm:</strong></p>
+            <ul>
+                <li>Tính năng bảo mật cao: Các điện thoại dành cho người dùng doanh nhân thường được trang bị các tính năng bảo mật tiên tiến để bảo vệ dữ liệu quan trọng và thông tin nhạy cảm. Điều này bao gồm các công nghệ như xác thực hai yếu tố, mã hóa dữ liệu và bảo mật sinh trắc học.</li>
+                <li>Khả năng quản lý công việc: Những thiết bị này hỗ trợ các công cụ quản lý công việc và lịch trình, giúp người dùng dễ dàng tổ chức và theo dõi các nhiệm vụ và cuộc hẹn. Tính năng đa nhiệm và khả năng xử lý mạnh mẽ cũng là những điểm nổi bật.</li>
+                <li>Hỗ trợ ứng dụng văn phòng: Điện thoại cho doanh nhân thường tích hợp sẵn hoặc hỗ trợ các ứng dụng văn phòng như Microsoft Office, Google Workspace, giúp người dùng dễ dàng soạn thảo tài liệu, xử lý bảng tính và làm việc với email.</li>
+            </ul>
+            <p><strong>Nhu cầu:</strong></p>
+            <ul>
+                <li>Quản lý công việc: Doanh nhân cần một thiết bị hỗ trợ quản lý công việc hiệu quả, từ việc lên kế hoạch, tổ chức cuộc họp đến theo dõi tiến độ dự án. Điện thoại cần cung cấp các công cụ và ứng dụng phù hợp để đáp ứng nhu cầu này.</li>
+                <li>Bảo mật thông tin: Đảm bảo bảo mật thông tin là yếu tố quan trọng, đặc biệt khi làm việc với dữ liệu nhạy cảm. Các tính năng bảo mật mạnh mẽ giúp bảo vệ thông tin cá nhân và doanh nghiệp khỏi các mối đe dọa tiềm tàng.</li>
+                <li>Kết nối doanh nghiệp: Doanh nhân cần một thiết bị giúp duy trì kết nối liên tục với đối tác, khách hàng và đồng nghiệp. Tính năng hỗ trợ kết nối mạng, giao tiếp qua email và các ứng dụng nhắn tin là rất cần thiết.</li>
+            </ul>
+            <p><strong>Ví dụ:</strong> Điện thoại có tính năng bảo mật mạnh mẽ, ứng dụng quản lý công việc, đồng bộ hóa dữ liệu như Samsung Galaxy Z Fold6, Samsung Galaxy S24 Ultra.</p>
+
+            <h4>Điện thoại di động thông minh cho game thủ</h4>
+            <p><strong>Đặc điểm:</strong></p>
+            <ul>
+                <li>Hiệu suất cao: Điện thoại dành cho game thủ được trang bị vi xử lý mạnh mẽ và RAM lớn để xử lý mượt mà các trò chơi đồ họa cao. Hiệu suất ổn định giúp giảm thiểu tình trạng lag và giật khi chơi game.</li>
+                <li>Màn hình lớn: Màn hình rộng với độ phân giải cao cung cấp trải nghiệm hình ảnh rõ nét và sống động, tăng cường sự tham gia vào trò chơi và cải thiện trải nghiệm giải trí.</li>
+                <li>Khả năng xử lý đồ họa mạnh mẽ: Các thiết bị này thường đi kèm với GPU cao cấp, hỗ trợ xử lý đồ họa phức tạp và các hiệu ứng hình ảnh chi tiết, giúp các trò chơi chạy mượt mà và đẹp mắt.</li>
+            </ul>
+            <p><strong>Nhu cầu:</strong></p>
+            <ul>
+                <li>Chơi game: Game thủ cần một thiết bị có khả năng xử lý tốt để chạy các trò chơi nặng, từ các game 3D đồ họa cao đến các game chiến thuật yêu cầu hiệu suất xử lý nhanh chóng.</li>
+                <li>Giải trí với đồ họa cao: Những người dùng này mong muốn trải nghiệm hình ảnh và âm thanh chất lượng cao, từ các trò chơi đến các nội dung giải trí khác như video và phim.</li>
+                <li>Hiệu suất ổn định: Để tránh tình trạng lag và giật, game thủ cần một thiết bị có hiệu suất ổn định và khả năng tản nhiệt tốt, giúp thiết bị hoạt động liên tục trong thời gian dài mà không gặp vấn đề về hiệu suất.</li>
+            </ul>
+            <p><strong>Ví dụ:</strong> Các mẫu điện thoại với vi xử lý mạnh mẽ, GPU cao cấp, màn hình tần số quét cao, như: Red Magic 9s Pro Plus, ROG Phone 8 và iPhone 15 Pro Max…</p>
+
+            <h4>Điện thoại di động thông minh cho người yêu thích nhiếp ảnh</h4>
+            <p><strong>Đặc điểm:</strong></p>
+            <ul>
+                <li>Camera chất lượng cao: Các điện thoại dành cho người yêu thích nhiếp ảnh thường được trang bị camera với độ phân giải cao, cho phép chụp những bức ảnh sắc nét và chi tiết. Các cảm biến camera chất lượng tốt giúp cải thiện khả năng chụp ảnh trong điều kiện ánh sáng thấp.</li>
+                <li>Tính năng chụp ảnh và quay video tiên tiến: Những thiết bị này cung cấp nhiều tính năng và chế độ chụp ảnh, quay video như chế độ chân dung, chụp ảnh đêm, quay video 4K, và các công cụ chỉnh sửa ảnh nâng cao. Điều này giúp người dùng sáng tạo và tinh chỉnh nội dung một cách chuyên nghiệp.</li>
+            </ul>
+            <p><strong>Nhu cầu:</strong></p>
+            <ul>
+                <li>Chụp ảnh: Người yêu thích nhiếp ảnh cần một thiết bị với camera chất lượng cao để chụp ảnh với độ chi tiết tốt, màu sắc chính xác và khả năng xử lý hình ảnh mạnh mẽ.</li>
+                <li>Quay video chuyên nghiệp: Đối với những ai muốn tạo ra các video chất lượng cao, việc có khả năng quay video 4K, hỗ trợ các tính năng ổn định hình ảnh và hiệu ứng đặc biệt là rất quan trọng.</li>
+                <li>Sáng tạo nội dung: Các tính năng chỉnh sửa ảnh và video tích hợp sẵn giúp người dùng dễ dàng chỉnh sửa và nâng cao chất lượng nội dung, từ việc điều chỉnh màu sắc, độ sáng, đến việc thêm hiệu ứng và bộ lọc.</li>
+            </ul>
+            <p><strong>Ví dụ:</strong> Điện thoại với camera nhiều megapixel, tính năng chỉnh sửa ảnh nâng cao như Vivo X100 Ultra, Xiaomi 14 Ultra…</p>
+
+            <h4>Điện thoại di động thông minh cho người yêu thích thể thao và sức khỏe</h4>
+            <p><strong>Đặc điểm:</strong></p>
+            <ul>
+                <li>Tính năng theo dõi sức khỏe và thể dục: Các điện thoại này thường được trang bị các cảm biến và ứng dụng theo dõi sức khỏe như đo nhịp tim, đếm bước chân, theo dõi giấc ngủ, và phân tích dữ liệu tập luyện. Chúng giúp người dùng theo dõi và cải thiện sức khỏe cá nhân.</li>
+                <li>Chống nước và bụi bẩn: Để đáp ứng nhu cầu sử dụng trong môi trường thể thao và ngoài trời, các thiết bị này thường có khả năng chống nước và bụi bẩn theo tiêu chuẩn IP, bảo vệ điện thoại khỏi các yếu tố môi trường.</li>
+            </ul>
+            <p><strong>Nhu cầu:</strong></p>
+            <ul>
+                <li>Theo dõi hoạt động thể chất: Người dùng cần các tính năng như đo nhịp tim, đếm bước chân, và theo dõi các bài tập thể dục để duy trì sức khỏe và đạt được các mục tiêu tập luyện.</li>
+                <li>Sức khỏe: Các tính năng theo dõi giấc ngủ và phân tích dữ liệu sức khỏe giúp người dùng theo dõi và cải thiện tình trạng sức khỏe tổng thể.</li>
+                <li>Thể thao ngoài trời: Điện thoại cần hỗ trợ GPS chính xác và các ứng dụng thể dục để người dùng có thể theo dõi hoạt động ngoài trời như chạy bộ, đạp xe, hoặc leo núi.</li>
+            </ul>
+            <p><strong>Ví dụ:</strong> Điện thoại với cảm biến đo nhịp tim, GPS, khả năng chống nước, ứng dụng thể dục như Samsung Galaxy S24 Ultra.</p>
+
+            <h4>Điện thoại di động thông minh cho người dùng yêu thích công nghệ mới</h4>
+            <p><strong>Đặc điểm:</strong></p>
+            <ul>
+                <li>Công nghệ tiên tiến: Các điện thoại này thường tích hợp các công nghệ mới nhất như 5G, xử lý AI, và các cảm biến tiên tiến, mang đến hiệu suất vượt trội và trải nghiệm công nghệ tiên tiến.</li>
+                <li>Tính năng mới lạ: Người dùng yêu thích công nghệ mới sẽ đánh giá cao những tính năng độc đáo như màn hình gập, cảm biến vân tay dưới màn hình, và khả năng tương tác với các thiết bị AR/VR.</li>
+                <li>Thiết kế độc đáo: Điện thoại này thường có thiết kế nổi bật và khác biệt, như màn hình cong, thiết kế không viền, hoặc các vật liệu chế tác mới, tạo nên sự hấp dẫn về mặt thẩm mỹ và chức năng.</li>
+            </ul>
+            <p><strong>Nhu cầu:</strong></p>
+            <ul>
+                <li>Khám phá công nghệ mới: Người dùng muốn trải nghiệm những công nghệ tiên tiến và đổi mới nhất trong ngành di động, từ tốc độ 5G đến các tính năng AI và cảm biến tiên tiến.</li>
+                <li>Trải nghiệm các tính năng và thiết kế hiện đại: Họ tìm kiếm các tính năng đột phá và thiết kế độc đáo để có trải nghiệm sử dụng tuyệt vời và khác biệt so với các thiết bị truyền thống.</li>
+            </ul>
+            <p><strong>Ví dụ:</strong> Điện thoại với công nghệ 5G, màn hình gập, tính năng AR/VR như: Samsung Galaxy Z Fold6, Samsung Galaxy Z Flip6, iPhone 15 Pro Max, Xiaomi 14 Ultra.</p>
+
+            <h2>Top thương hiệu điện thoại di động bán chạy nhất hiện nay</h2>
+            <p>Những thương hiệu này không chỉ nổi bật với công nghệ tiên tiến và thiết kế hiện đại, mà còn với sự đổi mới liên tục và khả năng đáp ứng nhu cầu đa dạng của người tiêu dùng. Dưới đây là bảy thương hiệu điện thoại di động đang dẫn đầu về doanh số bán hàng, mang đến cho người dùng những lựa chọn tuyệt vời và những trải nghiệm công nghệ đỉnh cao.</p>
+
+            <h3>Apple</h3>
+            <p>Apple là một trong những tên tuổi hàng đầu trong ngành công nghệ, nổi tiếng với lượng người hâm mộ đông đảo. Các sản phẩm iPhone của hãng luôn đứng đầu danh sách những chiếc điện thoại cao cấp nhất, thu hút người dùng toàn cầu nhờ vào thiết kế tinh tế và hiệu suất vượt trội.</p>
+
+            <h3>Samsung</h3>
+            <p>Samsung là một trong những nhà sản xuất điện thoại di động hàng đầu toàn cầu, nổi bật với dải sản phẩm phong phú trải dài từ các dòng cao cấp đến tầm trung và giá rẻ, bao gồm các series như Galaxy S và Galaxy Note.</p>
+
+            <h3>Xiaomi</h3>
+            <p>Xiaomi, một công ty công nghệ nổi tiếng của Trung Quốc, được biết đến với việc cung cấp điện thoại di động thông minh chất lượng cao nhưng giá cả phải chăng.</p>
+
+            <h3>Oppo</h3>
+            <p>OPPO là một nhà sản xuất điện thoại di động từ Trung Quốc, nổi bật với các mẫu điện thoại có camera selfie chất lượng cao và thiết kế hiện đại, tinh tế.</p>
+
+            <h3>Vivo</h3>
+            <p>Vivo, một thương hiệu điện thoại di động nổi tiếng của Trung Quốc, đặc biệt được biết đến với các sản phẩm sở hữu camera selfie xuất sắc và chất lượng âm thanh ấn tượng.</p>
+
+            <h3>Asus</h3>
+            <p>Asus, một nhà sản xuất điện thoại di động hàng đầu đến từ Đài Loan, nổi bật với các dòng sản phẩm điện thoại chất lượng cao như Zenfone, ROG Phone.</p>
+
+
+            <h2>Mua điện thoại di động chính hãng tại Cửa Hàng Điện Thoại</h2>
+            <p>Khi bạn tìm kiếm một địa chỉ đáng tin cậy để mua điện thoại di động, hệ thống của chúng tôi là sự lựa chọn lý tưởng. Chúng tôi cung cấp một dải sản phẩm đa dạng từ các thương hiệu nổi tiếng như Apple, Samsung, Xiaomi, Oppo và nhiều thương hiệu khác, đáp ứng mọi nhu cầu và ngân sách của người dùng.</p>
+        </article>
+    </div>
+
+    <div id="page-cart" class="spa-page container" style="display: none; padding: 40px 0;">
+        <h2>🛒 Giỏ hàng của bạn</h2>
+        <div id="cart-content-container" style="margin-top: 20px;"></div>
+    </div>
+
+    <div id="page-login" class="spa-page container" style="display: none; padding: 40px 0; max-width: 420px;">
+        <div style="background: #fff; padding: 30px; border-radius: 8px; border: 1px solid #ddd; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+            <h2 id="login-form-title" style="text-align: center; margin-bottom: 20px;">👤 Đăng Nhập</h2>
+
+            <form id="form-login-box" style="display: flex; flex-direction: column; gap: 14px;">
+                <input type="text" placeholder="Số điện thoại hoặc Email" required style="height: 42px; padding: 0 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;">
+                <input type="password" placeholder="Mật khẩu" required style="height: 42px; padding: 0 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; font-size: 13px;">
+                    <label style="cursor: pointer;"><input type="checkbox"> Ghi nhớ</label>
+                    <a href="#" onclick="toggleAuthForm('forgot')" style="color: #d70018; text-decoration: none;">Quên mật khẩu?</a>
+                </div>
+                <button type="submit" style="height: 42px; background: #d70018; color: #fff; border: none; border-radius: 4px; font-weight: bold; cursor: pointer;">Đăng Nhập</button>
+                <div style="text-align: center; margin-top: 10px; font-size: 14px;">
+                    Chưa có tài khoản? <a href="#" onclick="toggleAuthForm('register')" style="color: #1a73e8; font-weight: bold; text-decoration: none;">Đăng ký ngay</a>
+                </div>
+            </form>
+
+            <form id="form-register-box" style="display: none; flex-direction: column; gap: 14px;">
+                <input type="text" placeholder="Họ và tên" required style="height: 42px; padding: 0 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;">
+                <input type="text" placeholder="Số điện thoại" required style="height: 42px; padding: 0 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;">
+                <input type="password" placeholder="Tạo mật khẩu" required style="height: 42px; padding: 0 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;">
+                <button type="submit" style="height: 42px; background: #28a745; color: #fff; border: none; border-radius: 4px; font-weight: bold; cursor: pointer;">Tạo Tài Khoản</button>
+                <div style="text-align: center; margin-top: 10px; font-size: 14px;">
+                    Đã có tài khoản? <a href="#" onclick="toggleAuthForm('login')" style="color: #1a73e8; font-weight: bold; text-decoration: none;">Đăng nhập</a>
+                </div>
+            </form>
+
+<form id="form-forgot-box" style="display: none; flex-direction: column; gap: 14px;">
+    <p style="font-size: 13px; color: #666;">Nhập số điện thoại đã đăng ký để nhận mã xác nhận đặt lại mật khẩu.</p>
+    <input type="text" id="forgot-phone" placeholder="Số điện thoại đã đăng ký" required style="height: 42px; padding: 0 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;">
+    <button type="submit" id="forgot-send-btn" style="height: 42px; background: #1a73e8; color: #fff; border: none; border-radius: 4px; font-weight: bold; cursor: pointer;">Gửi Mã Xác Nhận</button>
+    <div id="forgot-step2" style="display: none; flex-direction: column; gap: 14px;">
+        <input type="text" id="forgot-code" placeholder="Nhập mã xác nhận" style="height: 42px; padding: 0 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;">
+        <input type="password" id="forgot-newpass" placeholder="Mật khẩu mới (ít nhất 6 ký tự)" style="height: 42px; padding: 0 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;">
+        <button type="button" id="forgot-reset-btn" style="height: 42px; background: #28a745; color: #fff; border: none; border-radius: 4px; font-weight: bold; cursor: pointer;">Đặt lại mật khẩu</button>
+    </div>
+    <div style="text-align: center; margin-top: 10px; font-size: 14px;">
+        <a href="#" onclick="toggleAuthForm('login')" style="color: #333; text-decoration: none;">← Quay lại Đăng nhập</a>
+    </div>
+</form>
+
+            <button onclick="showPage('home')" style="width: 100%; margin-top: 20px; padding: 8px; background: none; border: 1px solid #ccc; border-radius: 4px; color: #555; cursor: pointer;">Trở về Trang chủ</button>
+        </div>
+    </div>
+
+    <div id="page-history" class="spa-page container" style="display: none; padding: 40px 0;">
+        <h2>📦 Lịch sử mua hàng</h2>
+        <div id="history-content-container" style="margin-top: 20px;"></div>
+        <button type="button" onclick="clearOrderHistory()" style="margin-top: 20px; padding: 10px 20px; background: #d70018; color: #fff; border: none; border-radius: 4px; cursor: pointer;">Xoá lịch sử</button>
+    </div>
+
+    <div id="page-faq" class="spa-page container" style="display: none; padding: 40px 0;">
+        <h2>❓ Hỏi đáp & Hỗ trợ</h2>
+        <ul style="margin-top: 15px; list-style: disc; padding-left: 20px; line-height: 1.8;">
+            <li><b>Chính sách bảo hành ra sao?</b> Hỗ trợ bảo hành 1 đổi 1 trong 12 tháng.</li>
+            <li><b>Thanh toán như thế nào?</b> Hỗ trợ thanh toán tiền mặt khi nhận hàng hoặc chuyển khoản quét mã VNPAY.</li>
+        </ul>
+        <button onclick="showPage('home')" style="margin-top: 20px; padding: 10px 20px; background: #1a73e8; color: #fff; border: none; border-radius: 4px; cursor: pointer;">Về trang chủ</button>
+    </div>
+
+    <div id="page-search" class="spa-page container" style="display: none; padding: 40px 0;">
+        <h2>🔍 Kết quả tìm kiếm cho: <span id="search-keyword-text" style="color: #d70018;"></span></h2>
+        <div id="search-results-grid" class="product-grid" style="margin-top: 20px;"></div>
+        <button onclick="showPage('home')" style="margin-top: 20px; padding: 10px 20px; background: #1a73e8; color: #fff; border: none; border-radius: 4px; cursor: pointer;">Quay lại trang chủ</button>
+    </div>
+
+    <div id="page-detail" class="spa-page container" style="display: none; padding: 40px 0;">
+        <button onclick="showPage('home')" style="margin-bottom: 20px; padding: 8px 16px; background: #eee; border: none; border-radius: 4px; cursor: pointer;"><i class="fa-solid fa-arrow-left"></i> Quay lại trang chủ</button>
+        <div id="product-detail-container" style="display: flex; gap: 40px; background: #fff; padding: 30px; border-radius: 8px; border: 1px solid #ddd; flex-wrap: wrap;"></div>
+    </div>
+
+    <script>
+        function toggleAuthForm(type) {
+            const loginBox = document.getElementById('form-login-box');
+            const registerBox = document.getElementById('form-register-box');
+            const forgotBox = document.getElementById('form-forgot-box');
+            const title = document.getElementById('login-form-title');
+
+            loginBox.style.display = 'none';
+            registerBox.style.display = 'none';
+            forgotBox.style.display = 'none';
+
+            if (type === 'login') {
+                loginBox.style.display = 'flex';
+                title.textContent = '👤 Đăng Nhập';
+            } else if (type === 'register') {
+                registerBox.style.display = 'flex';
+                title.textContent = '📝 Đăng Ký Tài Khoản';
+            } else if (type === 'forgot') {
+                forgotBox.style.display = 'flex';
+                title.textContent = '🔑 Quên Mật Khẩu';
+            }
+        }
+    </script>
+
+    <script src="duan1.js"></script>
+</body>
+</html>
